@@ -162,3 +162,60 @@ def basic_cnn_functional(X_train, num_classes, lr = 0.0001):
     model.compile(loss = 'categorical_crossentropy', optimizer = adam, metrics = ['accuracy'])
     
     return model
+
+
+def VGG11(X_train, num_classes, lr = 0.0001):
+    model = keras.models.Sequential([
+    keras.layers.Conv2D(filters=64, kernel_size=(3,3), padding="same", activation='relu', input_shape=(X_train.shape[1: ])),
+    keras.layers.MaxPool2D(pool_size=(2,2), strides=(2,2)),
+    keras.layers.Conv2D(filters=128, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.MaxPool2D(pool_size=(2,2), strides=(2,2)),
+    keras.layers.Conv2D(filters=256, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.Conv2D(filters=256, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.MaxPool2D(pool_size=(2,2), strides=(2,2)),
+    keras.layers.Conv2D(filters=512, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.Conv2D(filters=512, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.MaxPool2D(pool_size=(2,2), strides=(2,2)),
+    keras.layers.Conv2D(filters=512, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.Conv2D(filters=512, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.MaxPool2D(pool_size=(2,2), strides=(2,2)),
+    keras.layers.Flatten(),
+    keras.layers.Dense(4096, activation='relu'),
+    keras.layers.Dense(4096, activation='relu'),
+    keras.layers.Dense(num_classes, activation='softmax')
+    ])
+
+    adam = optimizers.Adam(lr = lr)
+    model.compile(loss = 'categorical_crossentropy', optimizer = adam, metrics = ['accuracy'])
+
+    return model
+
+
+def alexnet(X_train, num_classes, lr = 0.0001):
+    model = keras.models.Sequential([
+    keras.layers.Conv2D(filters=96, kernel_size=(11,11), strides=(4,4), activation='relu', input_shape=(X_train.shape[1: ])),
+    keras.layers.BatchNormalization(),
+    keras.layers.MaxPool2D(pool_size=(3,3), strides=(2,2)),
+    keras.layers.Conv2D(filters=256, kernel_size=(5,5), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.BatchNormalization(),
+    keras.layers.MaxPool2D(pool_size=(3,3), strides=(2,2)),
+    keras.layers.Conv2D(filters=384, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.BatchNormalization(),
+    keras.layers.Conv2D(filters=384, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.BatchNormalization(),
+    keras.layers.Conv2D(filters=256, kernel_size=(3,3), strides=(1,1), activation='relu', padding="same"),
+    keras.layers.BatchNormalization(),
+    keras.layers.MaxPool2D(pool_size=(3,3), strides=(2,2)),
+    keras.layers.Flatten(),
+    keras.layers.Dense(4096, activation='relu'),
+    keras.layers.Dropout(0.5),
+    keras.layers.Dense(4096, activation='relu'),
+    keras.layers.Dropout(0.5),
+    keras.layers.Dense(num_classes, activation='softmax')
+    ])
+
+    adam = optimizers.Adam(lr = lr)
+    # model = keras.models.Model(inputs=input1, outputs=output)
+    model.compile(loss = 'categorical_crossentropy', optimizer = adam, metrics = ['accuracy'])
+
+    return model
