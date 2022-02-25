@@ -1,4 +1,3 @@
-import re
 import subprocess
 from os import environ
 import pathlib
@@ -22,7 +21,6 @@ def clean_up(file_name):
         shutil.rmtree(str(dirpath))
 
 def executeJupyter(dataset,train_type,learn_type,epochs,batch_size,save_model,tl_datasets):
-
 
     environ['dataset'] = dataset
     environ['train_type'] = train_type
@@ -52,73 +50,81 @@ def get_tl_datasets(dataset,all_datasets):
     return tl_datasets
 
 
-datasets = [
-    "iawe_gen_GASF_13m_100S5X4A1545_R12_80-20",
-    "iawe_gen_GASF_13m_100S5X4A1545_R42_80-20",
-    "iawe_gen_GASF_13m_100S5X4A1545_R82_80-20",
-    "redd_gen_GASF_13m_100S5X5A4934_R82_80-20",
-    "redd_gen_GASF_13m_100S5X5A4934_R12_80-20", 
-    "redd_gen_GASF_13m_100S5X5A4934_R42_80-20",
-    "eco_gen_GASF_13m_100S5X11A38085_R12_80-20",
-    "eco_gen_GASF_13m_100S5X11A38085_R42_80-20",
-    "eco_gen_GASF_13m_100S5X11A38085_R82_80-20",
-    "ukdale_gen_GASF_13m_100S5X12A54480_R12_80-20",
-    "ukdale_gen_GASF_13m_100S5X12A54480_R42_80-20",
-    "ukdale_gen_GASF_13m_100S5X12A54480_R82_80-20",
-    "refit_gen_GASF_13m_100S5X_15A166006_R12_80-20",
-    "refit_gen_GASF_13m_100S5X_15A166006_R42-80-20",
-    "refit_gen_GASF_13m_100S5X_15A166006_R82_80-20"
-           ]
+# datasets = [
+#     "iawe_gen_GASF_13m_100S5X4A1545_R12_80-20",
+#     "iawe_gen_GASF_13m_100S5X4A1545_R42_80-20",
+#     "iawe_gen_GASF_13m_100S5X4A1545_R82_80-20",
+#     "redd_gen_GASF_13m_100S5X5A4934_R82_80-20",
+#     "redd_gen_GASF_13m_100S5X5A4934_R12_80-20", 
+#     "redd_gen_GASF_13m_100S5X5A4934_R42_80-20",
+#     "eco_gen_GASF_13m_100S5X11A38085_R12_80-20",
+#     "eco_gen_GASF_13m_100S5X11A38085_R42_80-20",
+#     "eco_gen_GASF_13m_100S5X11A38085_R82_80-20",
+#     "ukdale_gen_GASF_13m_100S5X12A54480_R12_80-20",
+#     "ukdale_gen_GASF_13m_100S5X12A54480_R42_80-20",
+#     "ukdale_gen_GASF_13m_100S5X12A54480_R82_80-20",
+#     "refit_gen_GASF_13m_100S5X_15A166006_R12_80-20",
+#     "refit_gen_GASF_13m_100S5X_15A166006_R42-80-20",
+#     "refit_gen_GASF_13m_100S5X_15A166006_R82_80-20"
+#     ]
 #CNN
-# "iawe_gen_GASF_60m_300S0X_R12_80-20",
-# "iawe_gen_GASF_60m_300S0X_R42_80-20",
-# "iawe_gen_GASF_60m_300S0X_R82_80-20",
-# "redd_gen_GASF_60m_300S0X_R12_80-20",
-# "redd_gen_GASF_60m_300S0X_R42_80-20",
-# "redd_gen_GASF_60m_300S0X_R82_80-20",
-#  "eco_gen_GASF_60m_300S0X_2_R12_80-20",
-# "eco_gen_GASF_60m_300S0X_2_R42_80-20",
-# "eco_gen_GASF_60m_300S0X_2_R82_80-20",
-# "ukdale_gen_GASF_60m_300S0X_R42_80-20",
-# "ukdale_gen_GASF_60m_300S0X_R82_80-20",
-# "ukdale_gen_GASF_60m_300S0X_R12_80-20" 
+datasets =[
+"iawe_gen_GASF_60m_300S0X_R12_80-20",
+"iawe_gen_GASF_60m_300S0X_R42_80-20",
+"iawe_gen_GASF_60m_300S0X_R82_80-20",
+"redd_gen_GASF_60m_300S0X_R12_80-20",
+"redd_gen_GASF_60m_300S0X_R42_80-20",
+"redd_gen_GASF_60m_300S0X_R82_80-20",
+"eco_gen_GASF_60m_300S0X_2_R12_80-20",
+"eco_gen_GASF_60m_300S0X_2_R42_80-20",
+"eco_gen_GASF_60m_300S0X_2_R82_80-20",
+"ukdale_gen_GASF_60m_300S0X_R42_80-20",
+"ukdale_gen_GASF_60m_300S0X_R82_80-20",
+"ukdale_gen_GASF_60m_300S0X_R12_80-20" ,
+"refit_gen_GASF_60m_300S0X_15A157030N_R82_80-20-V1",
+"refit_gen_GASF_60m_300S0X_15A157030N_R12_80-20-V1",
+"refit_gen_GASF_60m_300S0X_15A157030N_R42_80-20-V1"
+   ]
 
 for dataset in datasets:
 
     unzip(dataset)
 
     #tl_datasets = get_tl_datasets(dataset, ["refit", "iawe", "eco", "redd", "ukdale"])
+
     tl_datasets = ""
-    
-    executeJupyter(dataset, "BB", "BI_LSTM", "150", "32", "True", tl_datasets)
+    executeJupyter(dataset, "BB", "VGG", "100", "32", "True", tl_datasets)
+
+    #executeJupyter(dataset, "TL", "CNN", "25", "32", "False", tl_datasets)
 
     clean_up(dataset)
 
     print("finished", dataset)
 
- 
+# #LSTM  
 # datasets2 = [
 #         "refit_gen_GASF_13m_100S5X_15A166006_R12_80-20",
 #         "refit_gen_GASF_13m_100S5X_15A166006_R42-80-20",
 #         "refit_gen_GASF_13m_100S5X_15A166006_R82_80-20"
 #             ]
 
-# #CNN
-# #  "refit_gen_GASF_60m_300S0X_15A157030N_R82_80-20-V1",
-# # "refit_gen_GASF_60m_300S0X_15A157030N_R12_80-20-V1",
-# # "refit_gen_GASF_60m_300S0X_15A157030N_R42_80-20-V1"
+# # #CNN
+# datasets2 = [
+#         "refit_gen_GASF_60m_300S0X_15A157030N_R82_80-20-V1",
+#         "refit_gen_GASF_60m_300S0X_15A157030N_R12_80-20-V1",
+#         "refit_gen_GASF_60m_300S0X_15A157030N_R42_80-20-V1"
+# #             ]
 # for dataset in datasets2:
 
 #     unzip(dataset)
 
 #     batch = "32"
-#     epochs = "50"
-
-#     executeJupyter(dataset, "TL", "CNN", epochs, batch, "False", "ukdale")
-#     executeJupyter(dataset, "TL", "CNN", epochs, batch, "False", "iawe")
-#     executeJupyter(dataset, "TL", "CNN", epochs, batch, "False", "redd")
-#     executeJupyter(dataset, "TL", "CNN", epochs, batch, "False", "eco")
-#     executeJupyter(dataset, "TL", "CNN", epochs, batch, "False", "ukdale")
+#     epochs = "20"
+#     mode = "CNN"
+#     # executeJupyter(dataset, "TL", mode, epochs, batch, "False", "ukdale")
+#     executeJupyter(dataset, "TL", mode, epochs, batch, "False", "iawe")
+#     executeJupyter(dataset, "TL", mode, epochs, batch, "False", "redd")
+#     # executeJupyter(dataset, "TL", mode, epochs, batch, "False", "eco")
 
 #     clean_up(dataset)
 
