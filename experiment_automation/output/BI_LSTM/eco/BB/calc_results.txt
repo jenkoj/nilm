@@ -1,15 +1,15 @@
-precision recall[1.]
-HEKA[ 33.67  98.    98.67 146.  ]
-fridge freezer[  99.     97.33   98.   3893.  ]
-HTPC[  87.     77.     81.33 1173.  ]
-audio system[ 61.    84.67  70.67 276.  ]
-router[ 95.67  66.33  97.67 314.  ]
-coffee maker[90.67  1.   95.33 65.  ]
-computer[ 93.33  93.    93.33 839.  ]
-lamp[ 78.    84.67  80.67 216.  ]
-laptop computer[ 79.  88.  83. 514.]
-microwave[ 98.33  99.    98.67 134.  ]
-washing machine[63.   32.67 97.33 47.  ]
-accuracy[  92.33 7617.  ]
-macro avg[  88.67   92.67   90.67 7617.  ]
-weighted avg[  93.     92.33   92.33 7617.  ]
+precision recall 1.0 & 
+HEKA 1.0 & 0.98 & 0.99 & 146.0 & 
+fridge freezer 0.99 & 0.97 & 0.98 & 3893.0 & 
+HTPC 0.87 & 0.77 & 0.81 & 1173.0 & 
+audio system 0.61 & 0.85 & 0.71 & 276.0 & 
+router 0.96 & 0.99 & 0.98 & 314.0 & 
+coffee maker 0.91 & 1.0 & 0.95 & 65.0 & 
+computer 0.93 & 0.93 & 0.93 & 839.0 & 
+lamp 0.78 & 0.85 & 0.81 & 216.0 & 
+laptop computer 0.79 & 0.88 & 0.83 & 514.0 & 
+microwave 0.98 & 0.99 & 0.99 & 134.0 & 
+washing machine 0.96 & 0.99 & 0.97 & 47.0 & 
+accuracy 0.92 & 7617.0 & 
+macro avg 0.89 & 0.93 & 0.91 & 7617.0 & 
+weighted avg 0.93 & 0.92 & 0.92 & 7617.0 & 

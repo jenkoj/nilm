@@ -1,0 +1,8 @@
+precision recall[1.]
+conditioner[ 1.   33.   33.67 34.  ]
+computer[65.33 66.   98.67 92.  ]
+fridge[ 66.33  94.33  97.   167.  ]
+television[66.  1. 79. 16.]
+accuracy[ 96.33 309.  ]
+macro avg[ 91.    98.    93.33 309.  ]
+weighted avg[ 97.33  96.33  96.67 309.  ]

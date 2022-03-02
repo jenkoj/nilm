@@ -1,0 +1,9 @@
+precision recall 0.01 & 
+conditioner 0.01 & 0.33 & 0.34 & 0.34 & 
+computer 0.65 & 0.66 & 0.99 & 0.92 & 
+fridge 0.66 & 0.94 & 0.97 & 1.67 & 
+television 0.66 & 0.01 & 0.79 & 0.16 & 
+accuracy 0.96 & 3.09 & 
+macro avg 0.91 & 0.98 & 0.93 & 3.09 & 
+weighted avg 0.97 & 0.96 & 0.97 & 3.09 & 
+dataset data 0.45 & 
