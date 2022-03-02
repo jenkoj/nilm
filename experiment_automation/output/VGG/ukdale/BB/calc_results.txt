@@ -1,33 +1,16 @@
-precision recall[1.]
-HEKA[  90.33   92.11   91.   2355.  ]
-fridge freezer[  93.67   95.     94.17 3230.  ]
-HTPC[  82.17   80.5    81.17 1246.5 ]
-audio system[ 52.67  62.17  56.67 448.  ]
-router[ 64.67  33.67  65.67 326.  ]
-coffee maker[ 92.67  91.33  92.   249.  ]
-computer[ 83.42  80.83  82.08 848.25]
-lamp[ 83.33  86.67  85.   455.  ]
-laptop computer[  85.17   89.67   87.33 1013.5 ]
-microwave[ 67.56  80.89  73.22 509.  ]
-washing machine[  81.83   84.     83.   1561.5 ]
-accuracy[  87.2 9787.4]
-macro avg[  81.87   83.4    82.4  9787.4 ]
-weighted avg[  87.47   87.2    87.27 9787.4 ]
-breadmaker[ 62.33  71.67  66.33 156.  ]
-broadband router[ 41.33  44.67  43.33 161.  ]
-dehumidifier[ 73.67  69.33  71.33 160.  ]
-dish washer[  86.     85.67   85.67 1561.  ]
-space heater[ 60.67  60.33  60.33 317.  ]
-food processor[ 70.    65.33  67.67 166.  ]
-pond pump[ 72.33  82.33  77.33 160.  ]
-television[  78.22   81.33   79.56 1475.33]
-tumble dryer[ 68.33  70.    69.   702.  ]
-washer dryer[ 61.67  62.17  61.83 638.5 ]
-furnace[ 85.    91.67  88.   128.  ]
-light[ 85.33  82.17  83.83 799.  ]
-sockets[ 81.    73.    76.33 601.  ]
-conditioner[ 1.   87.   92.67 23.  ]
-fridge[ 96.33  95.67  95.67 260.  ]
-boiler[  91.67   91.     91.33 1307.  ]
-monitor[  72.     72.     71.67 1045.  ]
-server computer[ 94.67  95.33  95.33 415.  ]
+precision recall 1.0 & 
+HEKA 0.89 & 0.93 & 0.91 & 1770.0 & 
+fridge freezer 0.96 & 0.97 & 0.96 & 2522.0 & 
+HTPC 0.75 & 0.8 & 0.77 & 960.0 & 
+boiler 0.92 & 0.91 & 0.91 & 1307.0 & 
+monitor 0.72 & 0.72 & 0.72 & 1045.0 & 
+computer 0.8 & 0.75 & 0.77 & 758.0 & 
+laptop computer 0.91 & 0.91 & 0.91 & 1347.0 & 
+light 0.9 & 0.84 & 0.87 & 960.0 & 
+microwave 0.88 & 0.89 & 0.89 & 1348.0 & 
+server computer 0.95 & 0.95 & 0.95 & 415.0 & 
+television 0.82 & 0.81 & 0.81 & 1572.0 & 
+washer dryer 0.93 & 0.91 & 0.92 & 983.0 & 
+accuracy 0.88 & 14987.0 & 
+macro avg 0.87 & 0.86 & 0.87 & 14987.0 & 
+weighted avg 0.88 & 0.88 & 0.88 & 14987.0 & 
